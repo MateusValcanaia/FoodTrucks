@@ -11,56 +11,50 @@ using System.Windows.Forms;
 
 namespace Foodtruck.Grafico
 {
-    public partial class TelaListaBedidas : Form
+    public partial class TelaListaLanche : Form
     {
-        
-        public TelaListaBedidas()
+        public TelaListaLanche()
         {
             InitializeComponent();
-        }
-
-        private void TelaListaBedidas_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btAdicionar_Click(object sender, EventArgs e)
         {
             abrirTela(null);
         }
-        private void abrirTela(Bebida bedida)
+        private void abrirTela(Lanche lanche)
         {
-            ManterBedidas tela = new ManterBedidas();
+            ManterLanche tela = new ManterLanche();
             tela.MdiParent = this.MdiParent;
-            tela.bebidas = bedida;
+            tela.lanches = lanche;
             tela.FormClosed += Tela_FormClosed;
             tela.Show();
         }
         private void Tela_FormClosed(object sender, FormClosedEventArgs e)
         {
-            CarregaBebidas();
+            CarregaLanches();
         }
-        private void CarregaBebidas()
+        private void CarregaLanches()
         {
-            //Fazer Logica.
-        }
-
-        private void btAlterar_Click(object sender, EventArgs e)
-        {
-            if (ValidaDados())
-            {
-                Bebida bebida = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
-                abrirTela(bebida);
-            }
+            //Desenvolver;
         }
         private bool ValidaDados()
         {
-            if (dgBebidas.SelectedRows.Count <= 0)
+            if (dgLanche.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Selecione uma linha");
                 return false;
             }
             return true;
+        }
+   
+        private void btAlterar_Click_1(object sender, EventArgs e)
+        {
+            if (ValidaDados())
+            {
+                Lanche lanche = (Lanche)dgLanche.SelectedRows[0].DataBoundItem;
+                abrirTela(lanche);
+            }
         }
 
         private void btRemover_Click(object sender, EventArgs e)
@@ -70,8 +64,8 @@ namespace Foodtruck.Grafico
                 DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {
-                    //Bebida bebida = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
-                    //var validacao = Program.Gerenciador.RemoverCliente(bebida);
+                    //Lanche lanche = (Lanche)dgLanche.SelectedRows[0].DataBoundItem;
+                    //var validacao = Program.Gerenciador.RemoverCliente(lanche);
                     //if (validacao.Valido)
                     //{
                     //    MessageBox.Show("Cliente removido com sucesso");
@@ -80,7 +74,7 @@ namespace Foodtruck.Grafico
                     //{
                     //    MessageBox.Show("Ocorreu um problema ao remover o cliente");
                     //}
-                    CarregaBebidas();
+                    CarregaLanches();
                 }
             }
         }

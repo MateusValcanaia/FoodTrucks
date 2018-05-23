@@ -185,26 +185,26 @@ namespace Foodtruck.Negocio
 
         public List<Cliente> TodosOsClientes()
         {
-            //return this.banco.Clientes.ToList();
-            return null;
+            return this.banco.Clientes.ToList();
+           
         }
 
         public List<Bebida> TodasAsBebidas()
         {
-            //return this.banco.Bebidas.ToList();
-            return null;
+           return this.banco.Bebidas.ToList();
+            
         }
 
         public List<Lanche> TodosOsLanches()
         {
-            //return this.banco.Lanches.ToList();
-            return null;
+            return this.banco.Lanches.ToList();
+            
         }
 
         public List<Pedido> TodosOsPedidos()
         {
-            //return this.banco.Pedidos.ToList();
-            return null;
+            return this.banco.Pedidos.ToList();
+            
         }
     }
 }
