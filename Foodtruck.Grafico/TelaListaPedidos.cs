@@ -21,7 +21,20 @@ namespace Foodtruck.Grafico
         private void btAdicionar_Click(object sender, EventArgs e)
         {
             AdicionaPedido adicionaPedido = new AdicionaPedido();
+            adicionaPedido.Show();
 
+        }
+        private void abrirTela(Pedido pedido)
+        {
+            AdicionaPedido adiciona = new AdicionaPedido();
+            adiciona.MdiParent = this.MdiParent;
+            adiciona.pedidos = pedido;
+            adiciona.FormClosed += Tela_FormClosed;
+            adiciona.Show();
+        }
+        private void Tela_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CarregaPedidos();
         }
         private void CarregaPedidos()
         {
@@ -35,6 +48,24 @@ namespace Foodtruck.Grafico
         private void TelaListaPedidos_Load(object sender, EventArgs e)
         {
             CarregaPedidos();
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            if (ValidaDados())
+            {
+                Pedido pedido = (Pedido)dgPedido.SelectedRows[0].DataBoundItem;
+                abrirTela(pedido);
+            }
+        }
+        private bool ValidaDados()
+        {
+            if (dgPedido.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            return true;
         }
     }
 }

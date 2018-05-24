@@ -33,7 +33,7 @@
             this.dgPedido = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             this.btAlterar.TabIndex = 4;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // dgPedido
             // 
@@ -67,7 +68,7 @@
             this.dgPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Cliente,
-            this.Valor});
+            this.DataCompra});
             this.dgPedido.Location = new System.Drawing.Point(21, 49);
             this.dgPedido.Margin = new System.Windows.Forms.Padding(2);
             this.dgPedido.Name = "dgPedido";
@@ -83,15 +84,15 @@
             // 
             // Cliente
             // 
-            this.Cliente.DataPropertyName = "Nome";
+            this.Cliente.DataPropertyName = "Cliente";
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
             // 
-            // Valor
+            // DataCompra
             // 
-            this.Valor.DataPropertyName = "Valor";
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
+            this.DataCompra.DataPropertyName = "DataCompra";
+            this.DataCompra.HeaderText = "Data Compra";
+            this.DataCompra.Name = "DataCompra";
             // 
             // TelaListaPedidos
             // 
@@ -116,6 +117,6 @@
         private System.Windows.Forms.DataGridView dgPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCompra;
     }
 }

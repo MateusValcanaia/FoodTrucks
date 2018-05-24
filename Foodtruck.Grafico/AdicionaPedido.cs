@@ -15,6 +15,7 @@ namespace Foodtruck.Grafico
     public partial class AdicionaPedido : Form
     {
         Pedido pedido = new Pedido();
+        public Pedido pedidos { get; set; }
 
         public AdicionaPedido()
         {
@@ -23,6 +24,10 @@ namespace Foodtruck.Grafico
 
         private void AdicionaPedido_Load(object sender, EventArgs e)
         {
+            if(pedidos != null)
+            {
+
+            }
             CarregaComboBoxes();
             CarregaDatagrids();
             CarregaTotal();
@@ -30,7 +35,14 @@ namespace Foodtruck.Grafico
 
         private void CarregaTotal()
         {
-            lbTotal.Text = pedido.ValorTotal().ToString();
+            if (pedidos != null)
+            {
+                lbTotal.Text = pedidos.ValorTotal().ToString();
+            }
+            else
+            {
+                lbTotal.Text = pedido.ValorTotal().ToString();
+            }
         }
 
         private void CarregaComboBoxes()
@@ -47,30 +59,60 @@ namespace Foodtruck.Grafico
             cbBebidas.ValueMember = "Id";
             cbBebidas.DataSource = Program.Gerenciador.TodasAsBebidas();
         }
-
+        
         private void CarregaDatagrids()
         {
-            dgBebidas.AutoGenerateColumns = false;
-            dgBebidas.DataSource = pedido.Bebidas.ToList();
-            
-            dgLanches.AutoGenerateColumns = false;
-            dgLanches.DataSource = pedido.Lanches.ToList();
+            if (pedidos != null)
+            {
+                dgBebidas.AutoGenerateColumns = false;
+                dgBebidas.DataSource = pedidos.Bebidas.ToList();
+
+                dgLanches.AutoGenerateColumns = false;
+                dgLanches.DataSource = pedidos.Lanches.ToList();
+
+            }
+            else
+            {
+                dgBebidas.AutoGenerateColumns = false;
+                dgBebidas.DataSource = pedido.Bebidas.ToList();
+
+                dgLanches.AutoGenerateColumns = false;
+                dgLanches.DataSource = pedido.Lanches.ToList();
+
+            }
 
             CarregaTotal();
         }
 
         private void btAdicionaBebida_Click(object sender, EventArgs e)
         {
+            if (pedidos !=null)
+            {
+                Bebida bebidaSelecionadas = (Bebida)cbBebidas.SelectedItem;
+                pedidos.Bebidas.Add(bebidaSelecionadas);
+                CarregaDatagrids();
+            }
+            else { 
             Bebida bebidaSelecionada = (Bebida)cbBebidas.SelectedItem;
             pedido.Bebidas.Add(bebidaSelecionada);
             CarregaDatagrids();
+            }
         }
 
         private void btAdicionaLanche_Click(object sender, EventArgs e)
         {
+            if(pedidos != null)
+            { 
             Lanche lancheSelecionado = cbLanches.SelectedItem as Lanche;
-            pedido.Lanches.Add(lancheSelecionado);
+            pedidos.Lanches.Add(lancheSelecionado);
             CarregaDatagrids();
+            }
+            else
+            {
+                Lanche lancheSelecionado = cbLanches.SelectedItem as Lanche;
+                pedido.Lanches.Add(lancheSelecionado);
+                CarregaDatagrids();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -79,10 +121,20 @@ namespace Foodtruck.Grafico
             {
                 pedido.Cliente = cbClientes.SelectedItem as Cliente;
                 pedido.DataCompra = DateTime.Now;
-                Validacao validacao = Program.Gerenciador.CadastraPedido(pedido);
+                Validacao validacao;
+                if (pedidos != null)
+                {
+                    validacao = Program.Gerenciador.AlteraPedido(pedidos);
+                }
+                else
+                {
+                    validacao = Program.Gerenciador.CadastraPedido(pedido);
+                }
+               
                 if (validacao.Valido)
                 {
                     MessageBox.Show("Pedido cadastrado com sucesso!");
+                    this.Close();
                 }
                 else
                 {
