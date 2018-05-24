@@ -75,8 +75,8 @@ namespace Foodtruck.Grafico
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 pedido.Cliente = cbClientes.SelectedItem as Cliente;
                 pedido.DataCompra = DateTime.Now;
                 Validacao validacao = Program.Gerenciador.CadastraPedido(pedido);
@@ -93,10 +93,10 @@ namespace Foodtruck.Grafico
                     }
                     MessageBox.Show(msg, "Erro");
                 }
-            //}catch(Exception ex)
-            //{
-            //    MessageBox.Show("Ocorreu um erro grave, fale com o administrador");
-            //}
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro grave, fale com o administrador");
+            }
             
         }
     }

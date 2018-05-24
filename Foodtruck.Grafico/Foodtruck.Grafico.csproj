@@ -58,48 +58,19 @@
     <Compile Include="AdicionaPedido.Designer.cs">
       <DependentUpon>AdicionaPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="FoodTruck.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FoodTruck.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ManterBedidas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManterBedidas.Designer.cs">
-      <DependentUpon>ManterBedidas.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManterCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManterCliente.Designer.cs">
       <DependentUpon>ManterCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManterLanche.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManterLanche.Designer.cs">
-      <DependentUpon>ManterLanche.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TelaListaBedidas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TelaListaBedidas.Designer.cs">
-      <DependentUpon>TelaListaBedidas.cs</DependentUpon>
-    </Compile>
     <Compile Include="TelaListaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TelaListaClientes.Designer.cs">
       <DependentUpon>TelaListaClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TelaListaLanche.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TelaListaLanche.Designer.cs">
-      <DependentUpon>TelaListaLanche.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -107,22 +78,11 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="TesteDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TesteDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AdicionaPedido.resx">
       <DependentUpon>AdicionaPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManterBedidas.resx">
-      <DependentUpon>ManterBedidas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManterCliente.resx">
       <DependentUpon>ManterCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManterLanche.resx">
-      <DependentUpon>ManterLanche.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -133,29 +93,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TelaListaBedidas.resx">
-      <DependentUpon>TelaListaBedidas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaListaClientes.resx">
       <DependentUpon>TelaListaClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TelaListaLanche.resx">
-      <DependentUpon>TelaListaLanche.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="FoodTruck.xsc">
-      <DependentUpon>FoodTruck.xsd</DependentUpon>
-    </None>
-    <None Include="FoodTruck.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FoodTruck.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FoodTruck.xss">
-      <DependentUpon>FoodTruck.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -166,17 +109,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TesteDataSet.xsc">
-      <DependentUpon>TesteDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TesteDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TesteDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TesteDataSet.xss">
-      <DependentUpon>TesteDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
