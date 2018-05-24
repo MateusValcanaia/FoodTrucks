@@ -31,11 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbId = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textCodigo = new System.Windows.Forms.TextBox();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.textValor = new System.Windows.Forms.TextBox();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -70,47 +68,29 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Valor:";
             // 
-            // label4
+            // textCodigo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 185);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Descrever:";
+            this.textCodigo.Location = new System.Drawing.Point(103, 59);
+            this.textCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.textCodigo.Name = "textCodigo";
+            this.textCodigo.Size = new System.Drawing.Size(150, 20);
+            this.textCodigo.TabIndex = 5;
             // 
-            // tbId
+            // textNome
             // 
-            this.tbId.Location = new System.Drawing.Point(103, 59);
-            this.tbId.Margin = new System.Windows.Forms.Padding(2);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(150, 20);
-            this.tbId.TabIndex = 5;
+            this.textNome.Location = new System.Drawing.Point(103, 94);
+            this.textNome.Margin = new System.Windows.Forms.Padding(2);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(150, 20);
+            this.textNome.TabIndex = 6;
             // 
-            // textBox1
+            // textValor
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 94);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(103, 135);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(103, 178);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(367, 20);
-            this.textBox3.TabIndex = 8;
+            this.textValor.Location = new System.Drawing.Point(103, 135);
+            this.textValor.Margin = new System.Windows.Forms.Padding(2);
+            this.textValor.Name = "textValor";
+            this.textValor.Size = new System.Drawing.Size(150, 20);
+            this.textValor.TabIndex = 7;
             // 
             // btCancelar
             // 
@@ -121,6 +101,7 @@
             this.btCancelar.TabIndex = 10;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btSalvar
             // 
@@ -131,6 +112,7 @@
             this.btSalvar.TabIndex = 11;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // ManterLanche
             // 
@@ -139,16 +121,15 @@
             this.ClientSize = new System.Drawing.Size(557, 261);
             this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.btCancelar);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.tbId);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textValor);
+            this.Controls.Add(this.textNome);
+            this.Controls.Add(this.textCodigo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ManterLanche";
             this.Text = "ManterLanche";
+            this.Load += new System.EventHandler(this.ManterLanche_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +140,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbId;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textCodigo;
+        private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.TextBox textValor;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btSalvar;
     }

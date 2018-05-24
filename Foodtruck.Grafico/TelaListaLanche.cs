@@ -36,7 +36,12 @@ namespace Foodtruck.Grafico
         }
         private void CarregaLanches()
         {
-            //Desenvolver;
+            dgLanche.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgLanche.MultiSelect = false;
+            dgLanche.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgLanche.AutoGenerateColumns = false;
+            List<Lanche> lanche = Program.Gerenciador.TodosOsLanches();
+            dgLanche.DataSource = lanche;
         }
         private bool ValidaDados()
         {
@@ -64,19 +69,25 @@ namespace Foodtruck.Grafico
                 DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {
-                    //Lanche lanche = (Lanche)dgLanche.SelectedRows[0].DataBoundItem;
-                    //var validacao = Program.Gerenciador.RemoverCliente(lanche);
-                    //if (validacao.Valido)
-                    //{
-                    //    MessageBox.Show("Cliente removido com sucesso");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Ocorreu um problema ao remover o cliente");
-                    //}
+                    Lanche lanche = (Lanche)dgLanche.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverLanche(lanche);
+                    if (validacao.Valido)
+                    {
+                        MessageBox.Show("Cliente removido com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um problema ao remover o cliente");
+                    }
                     CarregaLanches();
                 }
             }
+        }
+
+        private void TelaListaLanche_Load(object sender, EventArgs e)
+        {
+                CarregaLanches();
+            
         }
     }
 }

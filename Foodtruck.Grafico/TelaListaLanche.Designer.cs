@@ -32,7 +32,7 @@
             this.btRemover = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.dgLanche = new System.Windows.Forms.DataGridView();
-            this.Descrever = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgLanche)).BeginInit();
@@ -78,7 +78,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgLanche.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLanche.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Descrever,
+            this.Id,
             this.Nome,
             this.Valor});
             this.dgLanche.Location = new System.Drawing.Point(11, 64);
@@ -88,11 +88,11 @@
             this.dgLanche.Size = new System.Drawing.Size(539, 275);
             this.dgLanche.TabIndex = 5;
             // 
-            // Descrever
+            // Id
             // 
-            this.Descrever.DataPropertyName = "Descrever";
-            this.Descrever.HeaderText = "Descrever";
-            this.Descrever.Name = "Descrever";
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
             // 
             // Nome
             // 
@@ -117,6 +117,7 @@
             this.Controls.Add(this.btAdicionar);
             this.Name = "TelaListaLanche";
             this.Text = "TelaListaLanche";
+            this.Load += new System.EventHandler(this.TelaListaLanche_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgLanche)).EndInit();
             this.ResumeLayout(false);
 
@@ -128,7 +129,7 @@
         private System.Windows.Forms.Button btRemover;
         private System.Windows.Forms.Button btAlterar;
         private System.Windows.Forms.DataGridView dgLanche;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrever;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
     }
