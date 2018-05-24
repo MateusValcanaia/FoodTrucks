@@ -58,6 +58,11 @@
     <Compile Include="AdicionaPedido.Designer.cs">
       <DependentUpon>AdicionaPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodTruck.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoodTruck.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ManterBedidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +107,11 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="TesteDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TesteDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdicionaPedido.resx">
       <DependentUpon>AdicionaPedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +145,17 @@
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="FoodTruck.xsc">
+      <DependentUpon>FoodTruck.xsd</DependentUpon>
+    </None>
+    <None Include="FoodTruck.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FoodTruck.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FoodTruck.xss">
+      <DependentUpon>FoodTruck.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -145,6 +166,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TesteDataSet.xsc">
+      <DependentUpon>TesteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TesteDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TesteDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TesteDataSet.xss">
+      <DependentUpon>TesteDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

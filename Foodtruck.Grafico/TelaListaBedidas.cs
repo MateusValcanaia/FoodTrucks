@@ -21,7 +21,7 @@ namespace Foodtruck.Grafico
 
         private void TelaListaBedidas_Load(object sender, EventArgs e)
         {
-
+            CarregaBebidas();
         }
 
         private void btAdicionar_Click(object sender, EventArgs e)
@@ -42,7 +42,12 @@ namespace Foodtruck.Grafico
         }
         private void CarregaBebidas()
         {
-            //Fazer Logica.
+            dgBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgBebidas.MultiSelect = false;
+            dgBebidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgBebidas.AutoGenerateColumns = false;
+            List<Bebida> bebida = Program.Gerenciador.TodasAsBebidas();
+            dgBebidas.DataSource = bebida;
         }
 
         private void btAlterar_Click(object sender, EventArgs e)
@@ -70,16 +75,16 @@ namespace Foodtruck.Grafico
                 DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {
-                    //Bebida bebida = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
-                    //var validacao = Program.Gerenciador.RemoverCliente(bebida);
-                    //if (validacao.Valido)
-                    //{
-                    //    MessageBox.Show("Cliente removido com sucesso");
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Ocorreu um problema ao remover o cliente");
-                    //}
+                    Bebida bebida = (Bebida)dgBebidas.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverBebida(bebida);
+                    if (validacao.Valido)
+                    {
+                        MessageBox.Show("Cliente removido com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um problema ao remover o cliente");
+                    }
                     CarregaBebidas();
                 }
             }
