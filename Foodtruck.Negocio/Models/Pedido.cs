@@ -9,7 +9,7 @@ namespace Foodtruck.Negocio.Models
 {
 
 
-    [Table(name: "Pedidos")]
+    [Table(name: "Pedido")]
     public class Pedido
     {
         public long Id { get; set; }
@@ -20,6 +20,7 @@ namespace Foodtruck.Negocio.Models
 
         public Pedido()
         {
+           
             this.DataCompra = DateTime.MinValue;
             this.Lanches = new List<Lanche>();
             this.Bebidas = new List<Bebida>();
