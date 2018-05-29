@@ -38,7 +38,14 @@ namespace Foodtruck.Grafico
                 lanche.Id = -1;
             }
             lanche.Nome = textNome.Text;
-            lanche.Valor = Decimal.Parse(textValor.Text);
+            if (Decimal.TryParse(textValor.Text, out decimal valor))
+            {
+                lanche.Valor = valor;
+            }
+            else{
+                lanche.Valor = 0;
+            }
+           
             Validacao validacao;
             if (lanches == null)
             {

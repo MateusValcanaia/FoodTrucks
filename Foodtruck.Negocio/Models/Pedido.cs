@@ -14,6 +14,8 @@ namespace Foodtruck.Negocio.Models
     {
         public long Id { get; set; }
         public DateTime DataCompra { get; set; }
+        public String NomeCliente { get; set; }
+        public String ValorTotales { get; set; }
         public virtual Cliente Cliente { get; set; }
         public virtual ICollection<Lanche> Lanches { get; set; }
         public virtual ICollection<Bebida> Bebidas { get; set; }

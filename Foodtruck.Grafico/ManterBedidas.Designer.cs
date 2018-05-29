@@ -111,6 +111,7 @@
             this.textTamanho.Name = "textTamanho";
             this.textTamanho.Size = new System.Drawing.Size(164, 20);
             this.textTamanho.TabIndex = 8;
+            this.textTamanho.TextChanged += new System.EventHandler(this.textTamanho_TextChanged);
             // 
             // btCancelar
             // 

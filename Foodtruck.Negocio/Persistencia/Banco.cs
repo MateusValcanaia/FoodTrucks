@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace Foodtruck.Negocio.Persistencia
 {
-    public class BancoDados : DbContext
+    public class DadosBanco : DbContext
     {
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Bebida> Bebidas { get; set; }

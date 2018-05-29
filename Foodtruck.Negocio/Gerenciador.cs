@@ -11,7 +11,7 @@ namespace Foodtruck.Negocio
     public class Gerenciador
     {
        
-        private BancoDados banco = new BancoDados();
+        private DadosBanco banco = new DadosBanco();
 
         public Validacao RemoverCliente(Cliente cliente)
         {
@@ -72,7 +72,7 @@ namespace Foodtruck.Negocio
             Validacao validacao = new Validacao();
             Pedido pedido = BuscaPedidoPorId(pedidoAlterado.Id);
             pedido.Bebidas = pedidoAlterado.Bebidas;
-            pedido.Cliente = pedidoAlterado.Cliente;
+            pedido.NomeCliente = pedidoAlterado.Cliente.Nome;
             pedido.Lanches = pedidoAlterado.Lanches;
             this.banco.SaveChanges();
             return validacao;
@@ -217,7 +217,7 @@ namespace Foodtruck.Negocio
                     validacao.Mensagens.Add("bebida", "$Não existe nenhuma bebida cadastrada em um dos códigos informados");
                 }
             }
-
+            pedidoCadastrado.NomeCliente = pedidoCadastrado.Cliente.Nome;
             this.banco.Pedidos.Add(pedidoCadastrado);
             this.banco.SaveChanges();
 

@@ -38,10 +38,12 @@ namespace Foodtruck.Grafico
             if (pedidos != null)
             {
                 lbTotal.Text = pedidos.ValorTotal().ToString();
+                pedidos.ValorTotales = pedidos.ValorTotal().ToString();
             }
             else
             {
                 lbTotal.Text = pedido.ValorTotal().ToString();
+                pedido.ValorTotales = pedido.ValorTotal().ToString();
             }
         }
 

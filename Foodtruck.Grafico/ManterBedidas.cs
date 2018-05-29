@@ -44,8 +44,23 @@ namespace Foodtruck.Grafico
                 bebs.Id = -1;
             }
             bebs.Nome = textName.Text;
-            bebs.Tamanho = float.Parse(textTamanho.Text);
-            bebs.Valor = Decimal.Parse(textValor.Text);
+            if (float.TryParse(textTamanho.Text, out float tamanho))
+            {
+                bebs.Tamanho = tamanho;
+            }
+            else
+            {
+                bebs.Tamanho = 0;
+            }
+            if(Decimal.TryParse(textValor.Text, out decimal valor))
+            {
+                bebs.Valor = valor;
+            }
+            else
+            {
+                bebs.Valor = 0;
+            }
+            
             Validacao validacao;
             if (bebidas == null)
             {
@@ -76,6 +91,11 @@ namespace Foodtruck.Grafico
         private void btCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textTamanho_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
